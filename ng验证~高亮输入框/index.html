@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	 <link href="bootstrap.css" rel="stylesheet" type="text/css" />
+	 <script type='text/javascript' src='angular.js'></script>
+	 <script type='text/javascript' src='ui-bootstrap-tpls-0.10.0.js'></script>
+	 <script type='text/javascript' src='main.js'></script>
+	 <style>
+		.input-required{
+		color:red;
+		font-size:20px;
+		font-weight:bold;
+		padding-top:5px;
+		float:left;
+		}
+		#css_form input.ng-invalid.ng-dirty {
+        background-color: #FFC0CB;
+      }
+      #css_form input.ng-valid.ng-dirty {
+        background-color: #78FA89;
+      }
+	 </style>
+ </head>
+<body ng-app="myModule" ng-controller="myCtrl">
+<div style="margin-top:50px;">
+	<form  id="css_form"class="form-horizontal" novalidate name="myform" role="form" >
+	<div class="form-group">
+    <label for="inputAccount" class="col-sm-2 control-label">’À∫≈£∫</label>
+    <div class="col-md-2">
+      <input type="text"  ng-model="user.account" ng-pattern="/^[0-9]{6}$/"  name="myAccount" required   class="form-control"  id="inputAccount" placeholder="«Î ‰»Î6Œªµƒ ˝◊÷’À∫≈"/>
+	   </div>
+	<div class="input-required">*</div>	
+  </div>
+  
+  <div class="form-group">
+    <label for="inputEmail" class="col-sm-2 control-label">” œ‰£∫</label>
+    <div class="col-sm-2">
+      <input type="email" class="form-control" id="inputEmail" required ng-model="user.email" placeholder="«Î ‰»Î” œ‰µÿ÷∑">
+	</div>
+	<div class="input-required">*</div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button  class="btn btn-default"  ng-disabled="!myform.$valid">Ã·Ωª</button>
+	  <button class="btn btn-default" ng-click="reset()">÷ÿ÷√</button>
+    </div>
+  </div>
+</form>
+</body>
+</html>
